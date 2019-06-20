@@ -1122,9 +1122,6 @@
             - ownerId
             - groupId
             - referenceId
-        headers:
-        - name: HASURA_GRAPHQL_ACCESS_KEY
-          value_from_env: HASURA_GRAPHQL_ACCESS_KEY
         name: LeadActivity
         retry_conf:
           interval_sec: 10
