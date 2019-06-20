@@ -1122,6 +1122,9 @@
             - ownerId
             - groupId
             - referenceId
+        headers:
+        - name: HASURA_GRAPHQL_ACCESS_KEY
+          value_from_env: HASURA_GRAPHQL_ACCESS_KEY
         name: LeadActivity
         retry_conf:
           interval_sec: 10
@@ -1129,33 +1132,10 @@
         webhook_from_env: ACTIVITIES
       - definition:
           delete:
-            columns:
-            - id
-            - name
-            - phone
-            - email
-            - isAffliated
-            - employeesNumber
-            - outlets
-            - createdAt
-            - updatedAt
-            - sector
-            - type
-            - logo
+            columns: '*'
+          enable_manual: false
           insert:
-            columns:
-            - id
-            - name
-            - phone
-            - email
-            - isAffliated
-            - employeesNumber
-            - outlets
-            - createdAt
-            - updatedAt
-            - sector
-            - type
-            - logo
+            columns: '*'
           update:
             columns:
             - id
