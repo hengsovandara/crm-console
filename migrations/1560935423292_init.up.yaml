@@ -1,0 +1,3202 @@
+- args:
+    allowlist: []
+    functions: []
+    query_collections: []
+    query_templates: []
+    remote_schemas: []
+    tables:
+    - array_relationships: []
+      delete_permissions:
+      - comment: null
+        permission:
+          filter:
+            lead:
+              team:
+                members:
+                  userId:
+                    _eq: X-Hasura-User-Id
+        role: associate
+      - comment: null
+        permission:
+          filter: {}
+        role: manager
+      event_triggers: []
+      insert_permissions:
+      - comment: null
+        permission:
+          check: {}
+          columns: []
+          set: {}
+        role: validator
+      - comment: null
+        permission:
+          check: {}
+          columns:
+          - id
+          - note
+          - leadId
+          - type
+          - createdAt
+          - data
+          - ownerId
+          - notify
+          - date
+          - time
+          set: {}
+        role: associate
+      - comment: null
+        permission:
+          check: {}
+          columns:
+          - note
+          - data
+          - notify
+          - leadId
+          - time
+          - type
+          - createdAt
+          - date
+          - id
+          - ownerId
+          set: {}
+        role: manager
+      object_relationships:
+      - comment: null
+        name: user
+        using:
+          foreign_key_constraint_on: ownerId
+      - comment: null
+        name: lead
+        using:
+          manual_configuration:
+            column_mapping:
+              leadId: id
+            remote_table: Lead
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns: []
+          filter: {}
+        role: validator
+      - comment: null
+        permission:
+          allow_aggregations: true
+          columns:
+          - note
+          - data
+          - notify
+          - leadId
+          - time
+          - type
+          - createdAt
+          - date
+          - id
+          - ownerId
+          filter: {}
+        role: associate
+      - comment: null
+        permission:
+          allow_aggregations: true
+          columns:
+          - note
+          - data
+          - notify
+          - leadId
+          - time
+          - type
+          - createdAt
+          - date
+          - id
+          - ownerId
+          filter: {}
+        role: manager
+      table: Activity
+      update_permissions:
+      - comment: null
+        permission:
+          columns: []
+          filter: {}
+          set: {}
+        role: validator
+      - comment: null
+        permission:
+          columns:
+          - note
+          - data
+          - notify
+          - leadId
+          - time
+          - type
+          - createdAt
+          - date
+          - id
+          - ownerId
+          filter: {}
+          set: {}
+        role: associate
+      - comment: null
+        permission:
+          columns:
+          - note
+          - data
+          - notify
+          - leadId
+          - time
+          - type
+          - createdAt
+          - date
+          - id
+          - ownerId
+          filter: {}
+          set: {}
+        role: manager
+    - array_relationships: []
+      delete_permissions:
+      - comment: null
+        permission:
+          filter: {}
+        role: manager
+      - comment: null
+        permission:
+          filter:
+            lead:
+              ownerId:
+                _eq: X-HASURA-USER-ID
+        role: associate
+      event_triggers:
+      - definition:
+          delete:
+            columns:
+            - id
+            - leadId
+            - type
+            - like
+            - comment
+          insert:
+            columns:
+            - id
+            - leadId
+            - type
+            - like
+            - comment
+          update:
+            columns:
+            - id
+            - leadId
+            - type
+            - like
+            - comment
+        headers: []
+        name: PlatformScore
+        retry_conf:
+          interval_sec: 10
+          num_retries: 0
+        webhook_from_env: SCORE
+      - definition:
+          delete:
+            columns:
+            - id
+            - leadId
+            - type
+            - like
+            - comment
+          insert:
+            columns:
+            - id
+            - leadId
+            - type
+            - like
+            - comment
+          update:
+            columns:
+            - id
+            - leadId
+            - type
+            - like
+            - comment
+        headers: []
+        name: PlatformActivity
+        retry_conf:
+          interval_sec: 10
+          num_retries: 0
+        webhook_from_env: ACTIVITIES
+      insert_permissions:
+      - comment: null
+        permission:
+          check: {}
+          columns:
+          - comment
+          - id
+          - leadId
+          - like
+          - type
+          set: {}
+        role: moderator
+      - comment: null
+        permission:
+          check: {}
+          columns:
+          - id
+          - leadId
+          - type
+          - like
+          - comment
+          set: {}
+        role: manager
+      - comment: null
+        permission:
+          check: {}
+          columns:
+          - id
+          - leadId
+          - type
+          - like
+          - comment
+          set: {}
+        role: associate
+      object_relationships:
+      - comment: null
+        name: lead
+        using:
+          manual_configuration:
+            column_mapping:
+              leadId: id
+            remote_table: Lead
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - comment
+          - id
+          - leadId
+          - like
+          - type
+          filter: {}
+        role: moderator
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - id
+          - leadId
+          - type
+          - like
+          - comment
+          filter: {}
+        role: manager
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - id
+          - leadId
+          - type
+          - like
+          - comment
+          filter: {}
+        role: associate
+      table: PaymentPlatform
+      update_permissions:
+      - comment: null
+        permission:
+          columns:
+          - comment
+          - id
+          - leadId
+          - like
+          - type
+          filter: {}
+        role: moderator
+      - comment: null
+        permission:
+          columns:
+          - comment
+          - id
+          - leadId
+          - like
+          - type
+          filter: {}
+        role: manager
+      - comment: null
+        permission:
+          columns:
+          - comment
+          - id
+          - leadId
+          - like
+          - type
+          filter: {}
+          set: {}
+        role: associate
+    - array_relationships:
+      - comment: null
+        name: members
+        using:
+          manual_configuration:
+            column_mapping:
+              id: teamId
+            remote_table: TeamAndMembers
+      - comment: null
+        name: leads
+        using:
+          manual_configuration:
+            column_mapping:
+              id: teamId
+            remote_table: Lead
+      delete_permissions:
+      - comment: null
+        permission:
+          filter: {}
+        role: manager
+      event_triggers:
+      - definition:
+          delete:
+            columns:
+            - id
+            - name
+            - managerId
+            - associateIds
+            - createdAt
+          insert:
+            columns:
+            - id
+            - name
+            - managerId
+            - associateIds
+            - createdAt
+          update:
+            columns:
+            - id
+            - name
+            - managerId
+            - createdAt
+        headers: []
+        name: TeamActivity
+        retry_conf:
+          interval_sec: 10
+          num_retries: 0
+        webhook_from_env: ACTIVITIES
+      insert_permissions: []
+      object_relationships:
+      - comment: null
+        name: region
+        using:
+          foreign_key_constraint_on: regionId
+      - comment: null
+        name: manager
+        using:
+          manual_configuration:
+            column_mapping:
+              managerId: id
+            remote_table: Users
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: true
+          columns:
+          - id
+          - name
+          - managerId
+          - associateIds
+          - createdAt
+          filter: {}
+        role: user
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - id
+          - name
+          - managerId
+          - associateIds
+          - createdAt
+          filter: {}
+        role: validator
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - id
+          - name
+          - managerId
+          - associateIds
+          - createdAt
+          - regionId
+          filter: {}
+        role: associate
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - associateIds
+          - createdAt
+          - id
+          - managerId
+          - name
+          - regionId
+          filter: {}
+        role: manager
+      table: Team
+      update_permissions: []
+    - array_relationships: []
+      delete_permissions:
+      - comment: null
+        permission:
+          filter: {}
+        role: manager
+      - comment: null
+        permission:
+          filter:
+            lead:
+              ownerId:
+                _eq: X-HASURA-USER-ID
+        role: associate
+      event_triggers:
+      - definition:
+          delete:
+            columns:
+            - id
+            - leadId
+            - type
+            - like
+            - comment
+          insert:
+            columns:
+            - id
+            - leadId
+            - type
+            - like
+            - comment
+          update:
+            columns:
+            - id
+            - leadId
+            - type
+            - like
+            - comment
+        headers: []
+        name: ProgramScore
+        retry_conf:
+          interval_sec: 10
+          num_retries: 0
+        webhook_from_env: SCORE
+      - definition:
+          delete:
+            columns:
+            - id
+            - leadId
+            - type
+            - like
+            - comment
+          insert:
+            columns:
+            - id
+            - leadId
+            - type
+            - like
+            - comment
+          update:
+            columns:
+            - id
+            - leadId
+            - type
+            - like
+            - comment
+        headers: []
+        name: ProgramActivity
+        retry_conf:
+          interval_sec: 10
+          num_retries: 0
+        webhook_from_env: ACTIVITIES
+      insert_permissions:
+      - comment: null
+        permission:
+          check: {}
+          columns:
+          - id
+          - leadId
+          - type
+          - like
+          - comment
+          set: {}
+        role: manager
+      - comment: null
+        permission:
+          check: {}
+          columns:
+          - id
+          - leadId
+          - type
+          - like
+          - comment
+          set: {}
+        role: associate
+      - comment: null
+        permission:
+          check: {}
+          columns:
+          - comment
+          - id
+          - leadId
+          - like
+          - type
+          set: {}
+        role: validator
+      object_relationships:
+      - comment: null
+        name: lead
+        using:
+          manual_configuration:
+            column_mapping:
+              leadId: id
+            remote_table: Lead
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - id
+          - leadId
+          - type
+          - like
+          - comment
+          filter: {}
+        role: manager
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - comment
+          - id
+          - leadId
+          - like
+          - type
+          filter: {}
+        role: associate
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - comment
+          - id
+          - leadId
+          - like
+          - type
+          filter: {}
+        role: validator
+      table: LoyaltyProgram
+      update_permissions:
+      - comment: null
+        permission:
+          columns:
+          - comment
+          - id
+          - leadId
+          - like
+          - type
+          filter: {}
+        role: manager
+      - comment: null
+        permission:
+          columns:
+          - comment
+          - id
+          - leadId
+          - like
+          - type
+          filter: {}
+          set: {}
+        role: validator
+      - comment: null
+        permission:
+          columns:
+          - comment
+          - id
+          - leadId
+          - like
+          - type
+          filter: {}
+          set: {}
+        role: associate
+    - array_relationships: []
+      delete_permissions: []
+      event_triggers: []
+      insert_permissions: []
+      object_relationships:
+      - comment: null
+        name: credential
+        using:
+          foreign_key_constraint_on: credentialId
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: true
+          columns:
+          - id
+          - createdAt
+          - token
+          - credentialId
+          filter:
+            token:
+              _eq: X-Hasura-User-Token
+        role: manager
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - id
+          - createdAt
+          - token
+          - credentialId
+          filter:
+            token:
+              _eq: X-Hasura-User-token
+        role: associate
+      table: Session
+      update_permissions: []
+    - array_relationships: []
+      delete_permissions:
+      - comment: null
+        permission:
+          filter: {}
+        role: manager
+      - comment: null
+        permission:
+          filter:
+            lead:
+              ownerId:
+                _eq: X-HASURA-USER-ID
+        role: associate
+      event_triggers:
+      - definition:
+          delete:
+            columns:
+            - id
+            - leadId
+            - type
+          insert:
+            columns:
+            - id
+            - leadId
+            - type
+          update:
+            columns:
+            - id
+            - leadId
+            - type
+        headers: []
+        name: SocialScore
+        retry_conf:
+          interval_sec: 10
+          num_retries: 0
+        webhook_from_env: SCORE
+      - definition:
+          delete:
+            columns:
+            - id
+            - leadId
+            - type
+            - link
+          insert:
+            columns:
+            - id
+            - leadId
+            - type
+            - link
+          update:
+            columns:
+            - id
+            - leadId
+            - type
+            - link
+        headers: []
+        name: SocialActivity
+        retry_conf:
+          interval_sec: 10
+          num_retries: 0
+        webhook_from_env: ACTIVITIES
+      insert_permissions:
+      - comment: null
+        permission:
+          check: {}
+          columns:
+          - id
+          - leadId
+          - type
+          set: {}
+        role: moderator
+      - comment: null
+        permission:
+          check: {}
+          columns:
+          - id
+          - leadId
+          - link
+          - type
+          set: {}
+        role: associate
+      - comment: null
+        permission:
+          check: {}
+          columns:
+          - id
+          - leadId
+          - link
+          - type
+          set: {}
+        role: manager
+      object_relationships:
+      - comment: null
+        name: lead
+        using:
+          foreign_key_constraint_on: leadId
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - id
+          - leadId
+          - link
+          - type
+          filter: {}
+        role: associate
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - id
+          - leadId
+          - link
+          - type
+          filter: {}
+        role: manager
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - id
+          - leadId
+          - link
+          - type
+          filter: {}
+        role: moderator
+      table: Social
+      update_permissions:
+      - comment: null
+        permission:
+          columns:
+          - id
+          - leadId
+          - link
+          - type
+          filter: {}
+        role: manager
+      - comment: null
+        permission:
+          columns:
+          - id
+          - leadId
+          - link
+          - type
+          filter: {}
+        role: moderator
+      - comment: null
+        permission:
+          columns:
+          - id
+          - leadId
+          - link
+          - type
+          filter: {}
+          set: {}
+        role: associate
+    - array_relationships: []
+      delete_permissions:
+      - comment: null
+        permission:
+          filter: {}
+        role: manager
+      - comment: null
+        permission:
+          filter:
+            lead:
+              ownerId:
+                _eq: X-HASURA-USER-ID
+        role: associate
+      event_triggers:
+      - definition:
+          delete:
+            columns:
+            - id
+            - url
+            - type
+            - leadId
+          insert:
+            columns:
+            - id
+            - url
+            - type
+            - leadId
+          update:
+            columns:
+            - id
+            - url
+            - type
+            - leadId
+        headers: []
+        name: WebsiteScore
+        retry_conf:
+          interval_sec: 10
+          num_retries: 0
+        webhook_from_env: SCORE
+      - definition:
+          delete:
+            columns:
+            - id
+            - url
+            - type
+            - leadId
+          insert:
+            columns:
+            - id
+            - url
+            - type
+            - leadId
+          update:
+            columns:
+            - id
+            - url
+            - type
+            - leadId
+        headers: []
+        name: websiteActivity
+        retry_conf:
+          interval_sec: 10
+          num_retries: 0
+        webhook_from_env: ACTIVITIES
+      insert_permissions:
+      - comment: null
+        permission:
+          check: {}
+          columns:
+          - id
+          - url
+          - type
+          - leadId
+          set: {}
+        role: manager
+      - comment: null
+        permission:
+          check: {}
+          columns:
+          - id
+          - url
+          - type
+          - leadId
+          set: {}
+        role: associate
+      object_relationships:
+      - comment: null
+        name: lead
+        using:
+          manual_configuration:
+            column_mapping:
+              leadId: id
+            remote_table: Lead
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - id
+          - url
+          - type
+          - leadId
+          filter: {}
+        role: customer
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - id
+          - url
+          - type
+          - leadId
+          filter: {}
+        role: manager
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - id
+          - url
+          - type
+          - leadId
+          filter: {}
+        role: associate
+      table: Website
+      update_permissions:
+      - comment: null
+        permission:
+          columns:
+          - id
+          - leadId
+          - type
+          - url
+          filter: {}
+        role: manager
+      - comment: null
+        permission:
+          columns:
+          - id
+          - leadId
+          - type
+          - url
+          filter: {}
+          set: {}
+        role: associate
+    - array_relationships: []
+      delete_permissions: []
+      event_triggers: []
+      insert_permissions:
+      - comment: null
+        permission:
+          check: {}
+          columns:
+          - id
+          - name
+          - type
+          set: {}
+        role: moderator
+      object_relationships: []
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - id
+          - name
+          - type
+          filter: {}
+        role: moderator
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - id
+          - name
+          - type
+          filter: {}
+        role: associate
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - id
+          - name
+          - type
+          filter: {}
+        role: manager
+      table: Enum
+      update_permissions:
+      - comment: null
+        permission:
+          columns: []
+          filter: {}
+        role: moderator
+    - array_relationships:
+      - comment: null
+        name: websites
+        using:
+          manual_configuration:
+            column_mapping:
+              id: leadId
+            remote_table: Website
+      - comment: null
+        name: documents
+        using:
+          manual_configuration:
+            column_mapping:
+              id: leadId
+            remote_table: Photo
+      - comment: null
+        name: terminals
+        using:
+          manual_configuration:
+            column_mapping:
+              id: leadId
+            remote_table: PaymentTerminal
+      - comment: null
+        name: platforms
+        using:
+          manual_configuration:
+            column_mapping:
+              id: leadId
+            remote_table: PaymentPlatform
+      - comment: null
+        name: programs
+        using:
+          manual_configuration:
+            column_mapping:
+              id: leadId
+            remote_table: LoyaltyProgram
+      - comment: null
+        name: pictures
+        using:
+          manual_configuration:
+            column_mapping:
+              id: leadId
+            remote_table: Photo
+      - comment: null
+        name: decisionMakers
+        using:
+          foreign_key_constraint_on:
+            column: leadId
+            table: DecisionMaker
+      - comment: null
+        name: statistics
+        using:
+          manual_configuration:
+            column_mapping:
+              stats: stats
+            remote_table: Lead
+      - comment: null
+        name: activities
+        using:
+          manual_configuration:
+            column_mapping:
+              id: leadId
+            remote_table: Activity
+      - comment: null
+        name: groups
+        using:
+          foreign_key_constraint_on:
+            column: leadId
+            table: Group
+      - comment: null
+        name: socials
+        using:
+          foreign_key_constraint_on:
+            column: leadId
+            table: Social
+      delete_permissions:
+      - comment: null
+        permission:
+          filter: {}
+        role: associate
+      - comment: null
+        permission:
+          filter: {}
+        role: manager
+      - comment: null
+        permission:
+          filter: {}
+        role: validator
+      event_triggers:
+      - definition:
+          delete:
+            columns: '*'
+          enable_manual: true
+          insert:
+            columns: '*'
+          update:
+            columns:
+            - id
+            - name
+            - phone
+            - email
+            - isAffliated
+            - employeesNumber
+            - outlets
+            - createdAt
+            - updatedAt
+            - sector
+            - type
+            - logo
+            - status
+            - size
+            - teamId
+            - ownerId
+            - groupId
+            - referenceId
+        name: LeadActivity
+        retry_conf:
+          interval_sec: 10
+          num_retries: 2
+        webhook_from_env: ACTIVITIES
+      - definition:
+          delete:
+            columns:
+            - id
+            - name
+            - phone
+            - email
+            - isAffliated
+            - employeesNumber
+            - outlets
+            - createdAt
+            - updatedAt
+            - sector
+            - type
+            - logo
+          insert:
+            columns:
+            - id
+            - name
+            - phone
+            - email
+            - isAffliated
+            - employeesNumber
+            - outlets
+            - createdAt
+            - updatedAt
+            - sector
+            - type
+            - logo
+          update:
+            columns:
+            - id
+            - name
+            - phone
+            - email
+            - isAffliated
+            - employeesNumber
+            - outlets
+            - createdAt
+            - updatedAt
+            - sector
+            - type
+            - logo
+        headers: []
+        name: LeadScore
+        retry_conf:
+          interval_sec: 10
+          num_retries: 0
+        webhook_from_env: SCORE
+      - definition:
+          enable_manual: true
+        headers: []
+        name: ReferenceTrigger
+        retry_conf:
+          interval_sec: 10
+          num_retries: 0
+          timeout_sec: 60
+        webhook_from_env: SYNC_EKYM
+      insert_permissions:
+      - comment: null
+        permission:
+          check: {}
+          columns:
+          - createdAt
+          - email
+          - employeesNumber
+          - id
+          - isAffliated
+          - logo
+          - name
+          - outlets
+          - ownerId
+          - phone
+          - sector
+          - size
+          - stats
+          - status
+          - teamId
+          - type
+          - updatedAt
+          set: {}
+        role: validator
+      - comment: null
+        permission:
+          check: {}
+          columns:
+          - id
+          - name
+          - phone
+          - email
+          - isAffliated
+          - employeesNumber
+          - outlets
+          - createdAt
+          - updatedAt
+          - sector
+          - type
+          - logo
+          - ownerId
+          - status
+          - size
+          - teamId
+          - stats
+          - groupId
+          - referenceId
+          - countryCode
+          set: {}
+        role: manager
+      - comment: null
+        permission:
+          check: {}
+          columns:
+          - isAffliated
+          - countryCode
+          - size
+          - status
+          - id
+          - sector
+          - teamId
+          - stats
+          - email
+          - createdAt
+          - outlets
+          - updatedAt
+          - employeesNumber
+          - logo
+          - name
+          - ownerId
+          - referenceId
+          - type
+          - phone
+          - groupId
+          set: {}
+        role: associate
+      object_relationships:
+      - comment: null
+        name: group
+        using:
+          foreign_key_constraint_on: groupId
+      - comment: null
+        name: score
+        using:
+          manual_configuration:
+            column_mapping:
+              id: leadId
+            remote_table: Score
+      - comment: null
+        name: team
+        using:
+          manual_configuration:
+            column_mapping:
+              teamId: id
+            remote_table: Team
+      - comment: null
+        name: address
+        using:
+          manual_configuration:
+            column_mapping:
+              id: leadId
+            remote_table: Address
+      - comment: null
+        name: revenue
+        using:
+          manual_configuration:
+            column_mapping:
+              id: leadId
+            remote_table: Revenue
+      - comment: null
+        name: pos
+        using:
+          manual_configuration:
+            column_mapping:
+              id: leadId
+            remote_table: Pos
+      - comment: null
+        name: owner
+        using:
+          manual_configuration:
+            column_mapping:
+              ownerId: id
+            remote_table: Users
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - createdAt
+          - email
+          - employeesNumber
+          - id
+          - isAffliated
+          - logo
+          - name
+          - outlets
+          - ownerId
+          - phone
+          - sector
+          - size
+          - stats
+          - status
+          - teamId
+          - type
+          - updatedAt
+          filter: {}
+        role: validator
+      - comment: null
+        permission:
+          allow_aggregations: true
+          columns:
+          - status
+          filter: {}
+        role: user
+      - comment: null
+        permission:
+          allow_aggregations: true
+          columns:
+          - isAffliated
+          - countryCode
+          - size
+          - status
+          - id
+          - sector
+          - teamId
+          - stats
+          - email
+          - createdAt
+          - outlets
+          - updatedAt
+          - employeesNumber
+          - logo
+          - name
+          - ownerId
+          - referenceId
+          - type
+          - phone
+          - groupId
+          filter: {}
+        role: associate
+      - comment: null
+        permission:
+          allow_aggregations: true
+          columns:
+          - isAffliated
+          - countryCode
+          - size
+          - status
+          - id
+          - sector
+          - teamId
+          - stats
+          - email
+          - createdAt
+          - outlets
+          - updatedAt
+          - employeesNumber
+          - logo
+          - name
+          - ownerId
+          - referenceId
+          - type
+          - phone
+          - groupId
+          filter: {}
+        role: manager
+      table: Lead
+      update_permissions:
+      - comment: null
+        permission:
+          columns:
+          - createdAt
+          - email
+          - employeesNumber
+          - id
+          - isAffliated
+          - logo
+          - name
+          - outlets
+          - phone
+          - sector
+          - size
+          - stats
+          - status
+          - type
+          - updatedAt
+          filter: {}
+          set: {}
+        role: validator
+      - comment: null
+        permission:
+          columns:
+          - countryCode
+          - createdAt
+          - email
+          - employeesNumber
+          - groupId
+          - id
+          - isAffliated
+          - logo
+          - name
+          - outlets
+          - ownerId
+          - phone
+          - referenceId
+          - sector
+          - size
+          - stats
+          - status
+          - teamId
+          - type
+          - updatedAt
+          filter: {}
+          set: {}
+        role: associate
+      - comment: null
+        permission:
+          columns:
+          - isAffliated
+          - countryCode
+          - size
+          - status
+          - id
+          - sector
+          - teamId
+          - stats
+          - email
+          - createdAt
+          - outlets
+          - updatedAt
+          - employeesNumber
+          - logo
+          - name
+          - ownerId
+          - referenceId
+          - type
+          - phone
+          - groupId
+          filter: {}
+          set: {}
+        role: manager
+    - array_relationships: []
+      delete_permissions:
+      - comment: null
+        permission:
+          filter: {}
+        role: manager
+      - comment: null
+        permission:
+          filter:
+            lead:
+              ownerId:
+                _eq: X-HASURA-USER-ID
+        role: associate
+      event_triggers:
+      - definition:
+          delete:
+            columns:
+            - id
+            - url
+            - name
+            - description
+            - type
+            - leadId
+          insert:
+            columns:
+            - id
+            - url
+            - name
+            - description
+            - type
+            - leadId
+          update:
+            columns:
+            - id
+            - description
+            - leadId
+            - url
+        headers: []
+        name: PhotoActivity
+        retry_conf:
+          interval_sec: 10
+          num_retries: 0
+        webhook_from_env: ACTIVITIES
+      - definition:
+          delete:
+            columns:
+            - id
+            - url
+            - name
+            - description
+            - type
+            - leadId
+          insert:
+            columns:
+            - id
+            - url
+            - name
+            - description
+            - type
+            - leadId
+          update:
+            columns:
+            - id
+            - url
+            - name
+            - description
+            - type
+            - leadId
+        headers: []
+        name: PhotoScore
+        retry_conf:
+          interval_sec: 10
+          num_retries: 0
+        webhook_from_env: SCORE
+      insert_permissions:
+      - comment: null
+        permission:
+          check: {}
+          columns:
+          - description
+          - id
+          - leadId
+          - name
+          - type
+          - url
+          set: {}
+        role: associate
+      - comment: null
+        permission:
+          check: {}
+          columns:
+          - description
+          - id
+          - leadId
+          - name
+          - type
+          - url
+          set: {}
+        role: moderator
+      - comment: null
+        permission:
+          check: {}
+          columns:
+          - id
+          - url
+          - name
+          - description
+          - type
+          - leadId
+          set: {}
+        role: manager
+      object_relationships:
+      - comment: null
+        name: lead
+        using:
+          foreign_key_constraint_on: leadId
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - id
+          - url
+          - name
+          - description
+          - type
+          - leadId
+          filter: {}
+        role: associate
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - description
+          - id
+          - leadId
+          - name
+          - type
+          - url
+          filter: {}
+        role: moderator
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - description
+          - id
+          - leadId
+          - name
+          - type
+          - url
+          filter: {}
+        role: manager
+      table: Photo
+      update_permissions:
+      - comment: null
+        permission:
+          columns:
+          - description
+          - id
+          - leadId
+          - name
+          - type
+          - url
+          filter: {}
+        role: manager
+      - comment: null
+        permission:
+          columns:
+          - description
+          - id
+          - leadId
+          - name
+          - type
+          - url
+          filter: {}
+        role: moderator
+      - comment: null
+        permission:
+          columns:
+          - description
+          - id
+          - leadId
+          - name
+          - type
+          - url
+          filter: {}
+          set: {}
+        role: associate
+    - array_relationships:
+      - comment: null
+        name: credential
+        using:
+          foreign_key_constraint_on:
+            column: userId
+            table: Credential
+      - comment: null
+        name: teams
+        using:
+          manual_configuration:
+            column_mapping:
+              id: userId
+            remote_table: TeamAndMembers
+      delete_permissions:
+      - comment: null
+        permission:
+          filter: {}
+        role: manager
+      event_triggers: []
+      insert_permissions: []
+      object_relationships:
+      - comment: null
+        name: team
+        using:
+          manual_configuration:
+            column_mapping:
+              id: managerId
+            remote_table: Team
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: true
+          columns:
+          - email
+          - id
+          - name
+          - photo
+          - role
+          filter: {}
+        role: associate
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - email
+          - id
+          - name
+          - photo
+          - role
+          filter: {}
+        role: manager
+      - comment: null
+        permission:
+          allow_aggregations: true
+          columns:
+          - email
+          - id
+          - name
+          - photo
+          - role
+          filter: {}
+        role: user
+      table: Users
+      update_permissions:
+      - comment: null
+        permission:
+          columns:
+          - email
+          - name
+          - photo
+          filter: {}
+          set: {}
+        role: associate
+      - comment: null
+        permission:
+          columns:
+          - email
+          - name
+          - photo
+          filter: {}
+          set: {}
+        role: manager
+    - array_relationships:
+      - comment: null
+        name: contacts
+        using:
+          foreign_key_constraint_on:
+            column: companyId
+            table: DecisionMaker
+      delete_permissions:
+      - comment: null
+        permission:
+          filter: {}
+        role: manager
+      event_triggers: []
+      insert_permissions:
+      - comment: null
+        permission:
+          check: {}
+          columns:
+          - id
+          - name
+          set: {}
+        role: manager
+      object_relationships: []
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: true
+          columns:
+          - id
+          - name
+          filter: {}
+        role: manager
+      - comment: null
+        permission:
+          allow_aggregations: true
+          columns:
+          - id
+          - name
+          filter: {}
+        role: associate
+      table: Company
+      update_permissions:
+      - comment: null
+        permission:
+          columns:
+          - id
+          - name
+          filter: {}
+          set: {}
+        role: manager
+    - array_relationships: []
+      delete_permissions:
+      - comment: null
+        permission:
+          filter: {}
+        role: manager
+      - comment: null
+        permission:
+          filter: {}
+        role: moderator
+      - comment: null
+        permission:
+          filter: {}
+        role: associate
+      event_triggers: []
+      insert_permissions:
+      - comment: null
+        permission:
+          check: {}
+          columns:
+          - all
+          - contact
+          - id
+          - info
+          - leadId
+          - payment
+          - type
+          set: {}
+        role: moderator
+      - comment: null
+        permission:
+          check: {}
+          columns:
+          - all
+          - contact
+          - id
+          - info
+          - leadId
+          - payment
+          - type
+          set: {}
+        role: manager
+      object_relationships:
+      - comment: null
+        name: lead
+        using:
+          manual_configuration:
+            column_mapping:
+              leadId: id
+            remote_table: Lead
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - id
+          - all
+          - info
+          - payment
+          - contact
+          - type
+          - leadId
+          filter: {}
+        role: manager
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - all
+          - contact
+          - id
+          - info
+          - leadId
+          - payment
+          - type
+          filter: {}
+        role: moderator
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - all
+          - contact
+          - id
+          - info
+          - leadId
+          - payment
+          - type
+          filter: {}
+        role: customer
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - all
+          - contact
+          - id
+          - info
+          - leadId
+          - payment
+          - type
+          filter: {}
+        role: associate
+      table: Score
+      update_permissions:
+      - comment: null
+        permission:
+          columns:
+          - all
+          - contact
+          - id
+          - info
+          - leadId
+          - payment
+          - type
+          filter: {}
+        role: moderator
+      - comment: null
+        permission:
+          columns:
+          - all
+          - contact
+          - id
+          - info
+          - leadId
+          - payment
+          - type
+          filter: {}
+        role: manager
+    - array_relationships:
+      - comment: null
+        name: teams
+        using:
+          foreign_key_constraint_on:
+            column: regionId
+            table: Team
+      delete_permissions:
+      - comment: null
+        permission:
+          filter: {}
+        role: manager
+      event_triggers:
+      - definition:
+          delete:
+            columns: '*'
+          insert:
+            columns: '*'
+          update:
+            columns:
+            - id
+            - managerId
+            - name
+        headers: []
+        name: RegionActivity
+        retry_conf:
+          interval_sec: 10
+          num_retries: 0
+          timeout_sec: 60
+        webhook_from_env: ACTIVITIES
+      insert_permissions:
+      - comment: null
+        permission:
+          check: {}
+          columns:
+          - id
+          - name
+          - managerId
+          set: {}
+        role: associate
+      - comment: null
+        permission:
+          check: {}
+          columns:
+          - id
+          - managerId
+          - name
+          set: {}
+        role: manager
+      object_relationships:
+      - comment: null
+        name: manager
+        using:
+          foreign_key_constraint_on: managerId
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - id
+          - managerId
+          - name
+          filter: {}
+        role: manager
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - id
+          - managerId
+          - name
+          filter: {}
+        role: associate
+      table: Region
+      update_permissions:
+      - comment: null
+        permission:
+          columns:
+          - id
+          - managerId
+          - name
+          filter: {}
+          set: {}
+        role: associate
+      - comment: null
+        permission:
+          columns:
+          - id
+          - managerId
+          - name
+          filter: {}
+          set: {}
+        role: manager
+    - array_relationships: []
+      delete_permissions: []
+      event_triggers: []
+      insert_permissions: []
+      object_relationships: []
+      select_permissions: []
+      table: Notification
+      update_permissions: []
+    - array_relationships: []
+      delete_permissions: []
+      event_triggers: []
+      insert_permissions: []
+      object_relationships:
+      - comment: null
+        name: user
+        using:
+          manual_configuration:
+            column_mapping:
+              userId: id
+            remote_table: Users
+      - comment: null
+        name: team
+        using:
+          manual_configuration:
+            column_mapping:
+              teamId: id
+            remote_table: Team
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - id
+          - teamId
+          - userId
+          filter: {}
+        role: manager
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - id
+          - teamId
+          - userId
+          filter: {}
+        role: validator
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - id
+          - teamId
+          - userId
+          filter: {}
+        role: associate
+      - comment: null
+        permission:
+          allow_aggregations: true
+          columns:
+          - id
+          - teamId
+          - userId
+          filter: {}
+        role: user
+      table: TeamAndMembers
+      update_permissions: []
+    - array_relationships: []
+      delete_permissions:
+      - comment: null
+        permission:
+          filter: {}
+        role: manager
+      - comment: null
+        permission:
+          filter:
+            lead:
+              ownerId:
+                _eq: X-HASURA-USER-ID
+        role: associate
+      event_triggers:
+      - definition:
+          delete:
+            columns:
+            - id
+            - comment
+            - leadId
+            - type
+            - like
+          insert:
+            columns:
+            - id
+            - comment
+            - leadId
+            - type
+            - like
+          update:
+            columns:
+            - id
+            - comment
+            - leadId
+            - type
+            - like
+        headers: []
+        name: TerminalScore
+        retry_conf:
+          interval_sec: 10
+          num_retries: 0
+        webhook_from_env: SCORE
+      - definition:
+          delete:
+            columns:
+            - id
+            - comment
+            - leadId
+            - type
+            - like
+          insert:
+            columns:
+            - id
+            - comment
+            - leadId
+            - type
+            - like
+          update:
+            columns:
+            - id
+            - comment
+            - leadId
+            - type
+            - like
+        headers: []
+        name: TerminalActivity
+        retry_conf:
+          interval_sec: 10
+          num_retries: 0
+        webhook_from_env: ACTIVITIES
+      insert_permissions:
+      - comment: null
+        permission:
+          check: {}
+          columns:
+          - comment
+          - id
+          - leadId
+          - like
+          - type
+          set: {}
+        role: associate
+      - comment: null
+        permission:
+          check: {}
+          columns:
+          - id
+          - comment
+          - leadId
+          - type
+          - like
+          set: {}
+        role: manager
+      object_relationships:
+      - comment: null
+        name: lead
+        using:
+          manual_configuration:
+            column_mapping:
+              leadId: id
+            remote_table: Lead
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - comment
+          - id
+          - leadId
+          - like
+          - type
+          filter: {}
+        role: associate
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - id
+          - comment
+          - leadId
+          - type
+          - like
+          filter: {}
+        role: manager
+      table: PaymentTerminal
+      update_permissions:
+      - comment: null
+        permission:
+          columns:
+          - comment
+          - id
+          - leadId
+          - like
+          - type
+          filter: {}
+          set: {}
+        role: associate
+      - comment: null
+        permission:
+          columns:
+          - comment
+          - id
+          - leadId
+          - like
+          - type
+          filter: {}
+        role: manager
+    - array_relationships: []
+      delete_permissions:
+      - comment: null
+        permission:
+          filter:
+            lead:
+              ownerId:
+                _eq: X-Hasura-User-Id
+        role: validator
+      - comment: null
+        permission:
+          filter: {}
+        role: manager
+      - comment: null
+        permission:
+          filter:
+            lead:
+              ownerId:
+                _eq: X-HASURA-USER-ID
+        role: associate
+      event_triggers:
+      - definition:
+          delete:
+            columns: '*'
+          enable_manual: true
+          insert:
+            columns: '*'
+          update:
+            columns:
+            - id
+            - buildingName
+            - floor
+            - number
+            - street
+            - city
+            - khan
+            - sangkat
+            - lat
+            - long
+            - leadId
+            - lng
+            - postCode
+        headers: []
+        name: AddressActivity
+        retry_conf:
+          interval_sec: 10
+          num_retries: 0
+        webhook_from_env: ACTIVITIES
+      - definition:
+          delete:
+            columns: '*'
+          enable_manual: true
+          insert:
+            columns: '*'
+          update:
+            columns:
+            - id
+            - buildingName
+            - floor
+            - number
+            - street
+            - city
+            - khan
+            - sangkat
+            - lat
+            - long
+            - leadId
+            - lng
+        headers: []
+        name: AddressScore
+        retry_conf:
+          interval_sec: 10
+          num_retries: 0
+        webhook_from_env: SCORE
+      insert_permissions:
+      - comment: null
+        permission:
+          check: {}
+          columns:
+          - id
+          - buildingName
+          - floor
+          - number
+          - street
+          - city
+          - khan
+          - sangkat
+          - lat
+          - long
+          - leadId
+          - lng
+          - postCode
+          set: {}
+        role: validator
+      - comment: null
+        permission:
+          check: {}
+          columns:
+          - buildingName
+          - city
+          - floor
+          - id
+          - khan
+          - lat
+          - leadId
+          - lng
+          - long
+          - number
+          - postCode
+          - sangkat
+          - street
+          set: {}
+        role: manager
+      - comment: null
+        permission:
+          check: {}
+          columns:
+          - buildingName
+          - city
+          - floor
+          - id
+          - khan
+          - lat
+          - leadId
+          - lng
+          - long
+          - number
+          - postCode
+          - sangkat
+          - street
+          set: {}
+        role: associate
+      object_relationships:
+      - comment: null
+        name: lead
+        using:
+          manual_configuration:
+            column_mapping:
+              leadId: id
+            remote_table: Lead
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - id
+          - buildingName
+          - floor
+          - number
+          - street
+          - city
+          - khan
+          - sangkat
+          - lat
+          - long
+          - leadId
+          - lng
+          - postCode
+          filter: {}
+        role: associate
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - buildingName
+          - city
+          - floor
+          - id
+          - khan
+          - lat
+          - leadId
+          - lng
+          - long
+          - number
+          - postCode
+          - sangkat
+          - street
+          filter: {}
+        role: validator
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - buildingName
+          - city
+          - floor
+          - id
+          - khan
+          - lat
+          - leadId
+          - lng
+          - long
+          - number
+          - postCode
+          - sangkat
+          - street
+          filter: {}
+        role: manager
+      table: Address
+      update_permissions:
+      - comment: null
+        permission:
+          columns:
+          - buildingName
+          - city
+          - floor
+          - id
+          - khan
+          - lat
+          - leadId
+          - lng
+          - long
+          - number
+          - postCode
+          - sangkat
+          - street
+          filter: {}
+          set: {}
+        role: associate
+      - comment: null
+        permission:
+          columns:
+          - buildingName
+          - city
+          - floor
+          - id
+          - khan
+          - lat
+          - leadId
+          - lng
+          - long
+          - number
+          - postCode
+          - sangkat
+          - street
+          filter: {}
+        role: manager
+      - comment: null
+        permission:
+          columns:
+          - buildingName
+          - city
+          - floor
+          - id
+          - khan
+          - lat
+          - leadId
+          - lng
+          - long
+          - number
+          - postCode
+          - sangkat
+          - street
+          filter: {}
+          set: {}
+        role: validator
+    - array_relationships:
+      - comment: null
+        name: sessions
+        using:
+          foreign_key_constraint_on:
+            column: credentialId
+            table: Session
+      delete_permissions: []
+      event_triggers:
+      - definition:
+          enable_manual: true
+          insert:
+            columns: '*'
+          update:
+            columns:
+            - pin
+        headers:
+        - name: provider
+          value: clik-hasura
+        name: EncryptPin
+        retry_conf:
+          interval_sec: 10
+          num_retries: 0
+          timeout_sec: 60
+        webhook_from_env: ENCRYPT_PIN
+      insert_permissions: []
+      object_relationships:
+      - comment: null
+        name: user
+        using:
+          foreign_key_constraint_on: userId
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns: []
+          filter:
+            sessions:
+              token:
+                _eq: X-Hasura-User-token
+        role: associate
+      - comment: null
+        permission:
+          allow_aggregations: true
+          columns:
+          - id
+          - phoneNumber
+          - pin
+          - userId
+          filter:
+            sessions:
+              token:
+                _eq: X-Hasura-User-Token
+        role: manager
+      table: Credential
+      update_permissions:
+      - comment: null
+        permission:
+          columns:
+          - phoneNumber
+          - pin
+          filter:
+            sessions:
+              token:
+                _eq: X-Hasura-User-token
+          set: {}
+        role: associate
+      - comment: null
+        permission:
+          columns:
+          - phoneNumber
+          - pin
+          filter:
+            sessions:
+              token:
+                _eq: X-Hasura-User-Token
+          set: {}
+        role: manager
+    - array_relationships: []
+      delete_permissions:
+      - comment: null
+        permission:
+          filter: {}
+        role: manager
+      - comment: null
+        permission:
+          filter:
+            lead:
+              ownerId:
+                _eq: X-HASURA-USER-ID
+        role: associate
+      event_triggers:
+      - definition:
+          delete:
+            columns:
+            - id
+            - leadId
+            - comment
+            - like
+            - type
+          insert:
+            columns:
+            - id
+            - leadId
+            - comment
+            - like
+            - type
+          update:
+            columns:
+            - id
+            - leadId
+            - comment
+            - like
+            - type
+        headers: []
+        name: PosScore
+        retry_conf:
+          interval_sec: 10
+          num_retries: 0
+        webhook_from_env: SCORE
+      - definition:
+          delete:
+            columns:
+            - id
+            - leadId
+            - comment
+            - like
+            - type
+          insert:
+            columns:
+            - id
+            - leadId
+            - comment
+            - like
+            - type
+          update:
+            columns:
+            - id
+            - leadId
+            - comment
+            - like
+            - type
+        headers: []
+        name: PosActivity
+        retry_conf:
+          interval_sec: 10
+          num_retries: 0
+        webhook_from_env: ACTIVITIES
+      insert_permissions:
+      - comment: null
+        permission:
+          check: {}
+          columns:
+          - id
+          - leadId
+          - comment
+          - like
+          - type
+          set: {}
+        role: manager
+      - comment: null
+        permission:
+          check: {}
+          columns:
+          - id
+          - leadId
+          - comment
+          - like
+          - type
+          set: {}
+        role: associate
+      object_relationships:
+      - comment: null
+        name: lead
+        using:
+          manual_configuration:
+            column_mapping:
+              leadId: id
+            remote_table: Lead
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - comment
+          - id
+          - leadId
+          - like
+          - type
+          filter: {}
+        role: associate
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - id
+          - leadId
+          - comment
+          - like
+          - type
+          filter: {}
+        role: manager
+      table: Pos
+      update_permissions:
+      - comment: null
+        permission:
+          columns:
+          - comment
+          - leadId
+          - like
+          - type
+          filter: {}
+          set: {}
+        role: associate
+      - comment: null
+        permission:
+          columns:
+          - comment
+          - id
+          - leadId
+          - like
+          - type
+          filter: {}
+        role: manager
+    - array_relationships: []
+      delete_permissions:
+      - comment: null
+        permission:
+          filter: {}
+        role: manager
+      - comment: null
+        permission:
+          filter:
+            lead:
+              ownerId:
+                _eq: X-HASURA-USER-ID
+        role: associate
+      event_triggers:
+      - definition:
+          delete:
+            columns:
+            - id
+            - duration
+            - amount
+            - leadId
+          insert:
+            columns:
+            - id
+            - duration
+            - amount
+            - leadId
+          update:
+            columns:
+            - id
+            - duration
+            - amount
+            - leadId
+        headers: []
+        name: RevenueScore
+        retry_conf:
+          interval_sec: 10
+          num_retries: 0
+        webhook_from_env: SCORE
+      - definition:
+          delete:
+            columns:
+            - id
+            - duration
+            - amount
+            - leadId
+          insert:
+            columns:
+            - id
+            - duration
+            - amount
+            - leadId
+          update:
+            columns:
+            - id
+            - duration
+            - amount
+            - leadId
+        headers: []
+        name: RevenueActivity
+        retry_conf:
+          interval_sec: 10
+          num_retries: 0
+        webhook_from_env: ACTIVITIES
+      insert_permissions:
+      - comment: null
+        permission:
+          check: {}
+          columns:
+          - id
+          - duration
+          - amount
+          - leadId
+          set: {}
+        role: manager
+      - comment: null
+        permission:
+          check: {}
+          columns:
+          - id
+          - duration
+          - amount
+          - leadId
+          set: {}
+        role: associate
+      object_relationships:
+      - comment: null
+        name: lead
+        using:
+          manual_configuration:
+            column_mapping:
+              leadId: id
+            remote_table: Lead
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - amount
+          - duration
+          - id
+          - leadId
+          filter: {}
+        role: associate
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - id
+          - duration
+          - amount
+          - leadId
+          filter: {}
+        role: customer
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - id
+          - duration
+          - amount
+          - leadId
+          filter: {}
+        role: manager
+      table: Revenue
+      update_permissions:
+      - comment: null
+        permission:
+          columns:
+          - amount
+          - duration
+          - id
+          - leadId
+          filter: {}
+          set: {}
+        role: associate
+      - comment: null
+        permission:
+          columns:
+          - amount
+          - duration
+          - id
+          - leadId
+          filter: {}
+        role: manager
+    - array_relationships: []
+      delete_permissions: []
+      event_triggers: []
+      insert_permissions: []
+      object_relationships: []
+      select_permissions: []
+      table: Roles
+      update_permissions: []
+    - array_relationships:
+      - comment: null
+        name: children
+        using:
+          foreign_key_constraint_on:
+            column: groupId
+            table: Lead
+      delete_permissions:
+      - comment: null
+        permission:
+          filter: {}
+        role: manager
+      - comment: null
+        permission:
+          filter: {}
+        role: associate
+      event_triggers:
+      - definition:
+          delete:
+            columns: '*'
+          insert:
+            columns: '*'
+          update:
+            columns:
+            - id
+            - name
+            - leadId
+        headers: []
+        name: GroupActivity
+        retry_conf:
+          interval_sec: 10
+          num_retries: 0
+          timeout_sec: 60
+        webhook_from_env: ACTIVITIES
+      insert_permissions:
+      - comment: null
+        permission:
+          check: {}
+          columns:
+          - id
+          - name
+          - parentId
+          set: {}
+        role: associate
+      - comment: null
+        permission:
+          check: {}
+          columns:
+          - id
+          - name
+          - parentId
+          set: {}
+        role: manager
+      object_relationships:
+      - comment: null
+        name: lead
+        using:
+          foreign_key_constraint_on: leadId
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - id
+          - name
+          - leadId
+          filter: {}
+        role: associate
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - id
+          - name
+          - leadId
+          filter: {}
+        role: manager
+      table: Group
+      update_permissions:
+      - comment: null
+        permission:
+          columns:
+          - id
+          - name
+          - leadId
+          filter: {}
+          set: {}
+        role: manager
+      - comment: null
+        permission:
+          columns:
+          - id
+          - name
+          - leadId
+          filter: {}
+          set: {}
+        role: associate
+    - array_relationships: []
+      delete_permissions:
+      - comment: null
+        permission:
+          filter:
+            lead:
+              ownerId:
+                _eq: X-Hasura-User-Id
+        role: validator
+      - comment: null
+        permission:
+          filter: {}
+        role: associate
+      - comment: null
+        permission:
+          filter: {}
+        role: manager
+      event_triggers:
+      - definition:
+          delete:
+            columns:
+            - id
+            - title
+            - firstName
+            - lastName
+            - position
+            - phone
+            - email
+            - leadId
+          insert:
+            columns:
+            - id
+            - title
+            - firstName
+            - lastName
+            - position
+            - phone
+            - email
+            - leadId
+          update:
+            columns:
+            - id
+            - title
+            - firstName
+            - lastName
+            - position
+            - phone
+            - email
+            - leadId
+        headers: []
+        name: DecisionMakerScore
+        retry_conf:
+          interval_sec: 10
+          num_retries: 0
+        webhook_from_env: SCORE
+      - definition:
+          delete:
+            columns:
+            - id
+            - title
+            - firstName
+            - lastName
+            - position
+            - phone
+            - email
+            - leadId
+          insert:
+            columns:
+            - id
+            - title
+            - firstName
+            - lastName
+            - position
+            - phone
+            - email
+            - leadId
+          update:
+            columns:
+            - id
+            - title
+            - firstName
+            - lastName
+            - position
+            - phone
+            - email
+            - leadId
+        headers: []
+        name: DecisionMakerActivity
+        retry_conf:
+          interval_sec: 10
+          num_retries: 0
+        webhook_from_env: ACTIVITIES
+      insert_permissions:
+      - comment: null
+        permission:
+          check: {}
+          columns:
+          - id
+          - title
+          - firstName
+          - lastName
+          - position
+          - phone
+          - email
+          - leadId
+          - createdAt
+          - countryCode
+          set: {}
+        role: associate
+      - comment: null
+        permission:
+          check: {}
+          columns:
+          - position
+          - leadId
+          - id
+          - lastName
+          - countryCode
+          - title
+          - email
+          - createdAt
+          - firstName
+          - phone
+          set: {}
+        role: manager
+      - comment: null
+        permission:
+          check: {}
+          columns:
+          - createdAt
+          - email
+          - firstName
+          - id
+          - lastName
+          - leadId
+          - phone
+          - position
+          - title
+          set: {}
+        role: validator
+      object_relationships:
+      - comment: null
+        name: company
+        using:
+          foreign_key_constraint_on: companyId
+      - comment: null
+        name: lead
+        using:
+          foreign_key_constraint_on: leadId
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: true
+          columns:
+          - position
+          - leadId
+          - id
+          - lastName
+          - countryCode
+          - title
+          - email
+          - createdAt
+          - firstName
+          - phone
+          filter: {}
+        role: associate
+      - comment: null
+        permission:
+          allow_aggregations: true
+          columns:
+          - position
+          - leadId
+          - id
+          - lastName
+          - countryCode
+          - title
+          - email
+          - createdAt
+          - firstName
+          - phone
+          filter: {}
+        role: manager
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - createdAt
+          - email
+          - firstName
+          - id
+          - lastName
+          - leadId
+          - phone
+          - position
+          - title
+          filter: {}
+        role: validator
+      table: DecisionMaker
+      update_permissions:
+      - comment: null
+        permission:
+          columns:
+          - position
+          - leadId
+          - id
+          - lastName
+          - countryCode
+          - title
+          - email
+          - createdAt
+          - firstName
+          - phone
+          filter: {}
+          set: {}
+        role: associate
+      - comment: null
+        permission:
+          columns:
+          - createdAt
+          - email
+          - firstName
+          - id
+          - lastName
+          - leadId
+          - phone
+          - position
+          - title
+          filter: {}
+          set: {}
+        role: validator
+      - comment: null
+        permission:
+          columns:
+          - position
+          - leadId
+          - id
+          - lastName
+          - countryCode
+          - title
+          - email
+          - createdAt
+          - firstName
+          - phone
+          filter: {}
+          set: {}
+        role: manager
+  type: replace_metadata
