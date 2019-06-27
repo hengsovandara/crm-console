@@ -1,0 +1,29 @@
+- args:
+    role: associate
+    table:
+      name: DecisionMaker
+      schema: public
+  type: drop_insert_permission
+- args:
+    permission:
+      check: {}
+      columns:
+      - id
+      - title
+      - firstName
+      - lastName
+      - position
+      - phone
+      - email
+      - leadId
+      - createdAt
+      - countryCode
+      localPresets:
+      - key: ""
+        value: ""
+      set: {}
+    role: associate
+    table:
+      name: DecisionMaker
+      schema: public
+  type: create_insert_permission

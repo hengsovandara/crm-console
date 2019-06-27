@@ -1,0 +1,26 @@
+- args:
+    role: manager
+    table:
+      name: DecisionMaker
+      schema: public
+  type: drop_select_permission
+- args:
+    permission:
+      allow_aggregations: true
+      columns:
+      - position
+      - leadId
+      - id
+      - lastName
+      - countryCode
+      - title
+      - email
+      - createdAt
+      - firstName
+      - phone
+      filter: {}
+    role: manager
+    table:
+      name: DecisionMaker
+      schema: public
+  type: create_select_permission

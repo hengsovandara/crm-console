@@ -1,0 +1,29 @@
+- args:
+    role: manager
+    table:
+      name: DecisionMaker
+      schema: public
+  type: drop_insert_permission
+- args:
+    permission:
+      check: {}
+      columns:
+      - position
+      - leadId
+      - id
+      - lastName
+      - countryCode
+      - title
+      - email
+      - createdAt
+      - firstName
+      - phone
+      localPresets:
+      - key: ""
+        value: ""
+      set: {}
+    role: manager
+    table:
+      name: DecisionMaker
+      schema: public
+  type: create_insert_permission
