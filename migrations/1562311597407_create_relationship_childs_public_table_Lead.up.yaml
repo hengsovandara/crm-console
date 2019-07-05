@@ -1,0 +1,13 @@
+- args:
+    name: childs
+    table:
+      name: Lead
+      schema: public
+    using:
+      manual_configuration:
+        column_mapping:
+          id: parentId
+        remote_table:
+          name: Lead
+          schema: public
+  type: create_object_relationship

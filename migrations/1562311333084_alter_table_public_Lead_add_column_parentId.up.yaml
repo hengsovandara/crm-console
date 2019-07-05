@@ -1,0 +1,3 @@
+- args:
+    sql: ALTER TABLE "public"."Lead" ADD COLUMN "parentId" uuid NULL
+  type: run_sql
