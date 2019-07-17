@@ -1,0 +1,39 @@
+- args:
+    role: manager
+    table:
+      name: Lead
+      schema: public
+  type: drop_update_permission
+- args:
+    permission:
+      columns:
+      - isAffliated
+      - countryCode
+      - size
+      - status
+      - id
+      - sector
+      - teamId
+      - stats
+      - email
+      - createdAt
+      - outlets
+      - updatedAt
+      - employeesNumber
+      - logo
+      - name
+      - ownerId
+      - referenceId
+      - type
+      - phone
+      - groupId
+      filter: {}
+      localPresets:
+      - key: ""
+        value: ""
+      set: {}
+    role: manager
+    table:
+      name: Lead
+      schema: public
+  type: create_update_permission
