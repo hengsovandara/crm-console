@@ -1,0 +1,39 @@
+- args:
+    role: manager
+    table:
+      name: Lead
+      schema: public
+  type: drop_insert_permission
+- args:
+    permission:
+      check: {}
+      columns:
+      - id
+      - name
+      - phone
+      - email
+      - isAffliated
+      - employeesNumber
+      - outlets
+      - createdAt
+      - updatedAt
+      - sector
+      - type
+      - logo
+      - ownerId
+      - status
+      - size
+      - teamId
+      - stats
+      - groupId
+      - referenceId
+      - countryCode
+      localPresets:
+      - key: ""
+        value: ""
+      set: {}
+    role: manager
+    table:
+      name: Lead
+      schema: public
+  type: create_insert_permission
