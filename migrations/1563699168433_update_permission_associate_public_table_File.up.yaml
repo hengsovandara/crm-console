@@ -1,0 +1,18 @@
+- args:
+    permission:
+      allow_upsert: true
+      check: {}
+      columns:
+      - id
+      - type
+      - url
+      - leadId
+      localPresets:
+      - key: ""
+        value: ""
+      set: {}
+    role: associate
+    table:
+      name: File
+      schema: public
+  type: create_insert_permission

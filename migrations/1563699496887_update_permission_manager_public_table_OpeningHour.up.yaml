@@ -1,0 +1,18 @@
+- args:
+    permission:
+      columns:
+      - close
+      - day
+      - open
+      - id
+      - leadId
+      filter: {}
+      localPresets:
+      - key: ""
+        value: ""
+      set: {}
+    role: manager
+    table:
+      name: OpeningHour
+      schema: public
+  type: create_update_permission

@@ -1,0 +1,39 @@
+- args:
+    role: manager
+    table:
+      name: Lead
+      schema: public
+  type: drop_select_permission
+- args:
+    permission:
+      allow_aggregations: true
+      columns:
+      - countryCode
+      - createdAt
+      - description
+      - email
+      - employeesNumber
+      - groupId
+      - id
+      - isAffliated
+      - isBrand
+      - logo
+      - name
+      - outlets
+      - ownerId
+      - parentId
+      - phone
+      - referenceId
+      - sector
+      - size
+      - stats
+      - status
+      - teamId
+      - type
+      - updatedAt
+      filter: {}
+    role: manager
+    table:
+      name: Lead
+      schema: public
+  type: create_select_permission

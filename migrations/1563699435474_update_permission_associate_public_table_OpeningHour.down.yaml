@@ -1,0 +1,6 @@
+- args:
+    role: associate
+    table:
+      name: OpeningHour
+      schema: public
+  type: drop_insert_permission
