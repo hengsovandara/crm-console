@@ -1,0 +1,13 @@
+- args:
+    name: lead
+    table:
+      name: OpeningHour
+      schema: public
+    using:
+      manual_configuration:
+        column_mapping:
+          leadId: id
+        remote_table:
+          name: Lead
+          schema: public
+  type: create_object_relationship

@@ -1,0 +1,6 @@
+- args:
+    relationship: lead
+    table:
+      name: File
+      schema: public
+  type: drop_relationship
