@@ -1,0 +1,6 @@
+- args:
+    role: manager
+    table:
+      name: File
+      schema: public
+  type: drop_delete_permission

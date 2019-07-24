@@ -1,0 +1,16 @@
+- args:
+    permission:
+      allow_aggregations: false
+      columns:
+      - close
+      - day
+      - open
+      - id
+      - leadId
+      filter: {}
+      limit: null
+    role: manager
+    table:
+      name: OpeningHour
+      schema: public
+  type: create_select_permission

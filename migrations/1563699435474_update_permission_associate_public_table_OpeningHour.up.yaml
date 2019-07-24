@@ -1,0 +1,19 @@
+- args:
+    permission:
+      allow_upsert: true
+      check: {}
+      columns:
+      - open
+      - close
+      - day
+      - id
+      - leadId
+      localPresets:
+      - key: ""
+        value: ""
+      set: {}
+    role: associate
+    table:
+      name: OpeningHour
+      schema: public
+  type: create_insert_permission
