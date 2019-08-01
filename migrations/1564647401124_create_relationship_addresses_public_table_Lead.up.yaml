@@ -1,0 +1,13 @@
+- args:
+    name: addresses
+    table:
+      name: Lead
+      schema: public
+    using:
+      manual_configuration:
+        column_mapping:
+          id: leadId
+        remote_table:
+          name: Address
+          schema: public
+  type: create_array_relationship
