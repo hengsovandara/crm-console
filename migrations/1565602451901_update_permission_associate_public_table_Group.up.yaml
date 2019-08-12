@@ -1,0 +1,16 @@
+- args:
+    permission:
+      columns:
+      - id
+      - leadId
+      - name
+      filter: {}
+      localPresets:
+      - key: ""
+        value: ""
+      set: {}
+    role: associate
+    table:
+      name: Group
+      schema: public
+  type: create_update_permission

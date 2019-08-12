@@ -1,0 +1,6 @@
+- args:
+    role: associate
+    table:
+      name: Group
+      schema: public
+  type: drop_delete_permission
