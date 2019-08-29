@@ -1,0 +1,4 @@
+- args:
+    sql: ALTER TABLE "public"."Revenue" ADD CONSTRAINT "Revenue_leadId_key" UNIQUE
+      ("leadId")
+  type: run_sql
