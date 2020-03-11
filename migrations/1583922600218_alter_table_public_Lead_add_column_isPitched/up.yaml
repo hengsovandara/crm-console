@@ -1,0 +1,4 @@
+- args:
+    sql: ALTER TABLE "public"."Lead" ADD COLUMN "isPitched" boolean NOT NULL DEFAULT
+      false;
+  type: run_sql
