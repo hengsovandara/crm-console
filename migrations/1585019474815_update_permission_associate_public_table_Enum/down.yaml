@@ -1,0 +1,19 @@
+- args:
+    role: associate
+    table:
+      name: Enum
+      schema: public
+  type: drop_select_permission
+- args:
+    permission:
+      allow_aggregations: false
+      columns:
+      - id
+      - name
+      - type
+      filter: {}
+    role: associate
+    table:
+      name: Enum
+      schema: public
+  type: create_select_permission
