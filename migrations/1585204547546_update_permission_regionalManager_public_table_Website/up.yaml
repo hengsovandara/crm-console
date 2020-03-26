@@ -1,0 +1,18 @@
+- args:
+    permission:
+      allow_upsert: true
+      check: {}
+      columns:
+      - id
+      - url
+      - type
+      - leadId
+      localPresets:
+      - key: ""
+        value: ""
+      set: {}
+    role: regionalManager
+    table:
+      name: Website
+      schema: public
+  type: create_insert_permission

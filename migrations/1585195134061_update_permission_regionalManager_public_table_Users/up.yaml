@@ -1,0 +1,15 @@
+- args:
+    permission:
+      allow_aggregations: false
+      columns:
+      - email
+      - id
+      - name
+      - photo
+      - role
+      filter: {}
+    role: regionalManager
+    table:
+      name: Users
+      schema: public
+  type: create_select_permission

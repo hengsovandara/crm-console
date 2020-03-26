@@ -1,0 +1,15 @@
+- args:
+    permission:
+      allow_aggregations: false
+      columns:
+      - id
+      - token
+      - type
+      - sessionId
+      filter: {}
+      limit: null
+    role: regionalManager
+    table:
+      name: Collaborators
+      schema: public
+  type: create_select_permission

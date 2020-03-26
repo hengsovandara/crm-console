@@ -1,0 +1,16 @@
+- args:
+    permission:
+      columns:
+      - id
+      - teamId
+      - userId
+      filter: {}
+      localPresets:
+      - key: ""
+        value: ""
+      set: {}
+    role: regionalManager
+    table:
+      name: TeamAndMembers
+      schema: public
+  type: create_update_permission

@@ -1,0 +1,14 @@
+- args:
+    permission:
+      allow_aggregations: true
+      columns:
+      - id
+      - teamId
+      - userId
+      filter: {}
+      limit: null
+    role: regionalManager
+    table:
+      name: TeamAndMembers
+      schema: public
+  type: create_select_permission

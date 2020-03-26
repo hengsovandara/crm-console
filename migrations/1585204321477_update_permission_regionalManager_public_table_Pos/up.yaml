@@ -1,0 +1,16 @@
+- args:
+    permission:
+      allow_aggregations: true
+      columns:
+      - like
+      - comment
+      - type
+      - id
+      - leadId
+      filter: {}
+      limit: null
+    role: regionalManager
+    table:
+      name: Pos
+      schema: public
+  type: create_select_permission

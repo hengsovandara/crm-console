@@ -1,0 +1,15 @@
+- args:
+    permission:
+      allow_aggregations: false
+      columns:
+      - id
+      - phoneNumber
+      - pin
+      - userId
+      filter: {}
+      limit: null
+    role: moderator
+    table:
+      name: Credential
+      schema: public
+  type: create_select_permission

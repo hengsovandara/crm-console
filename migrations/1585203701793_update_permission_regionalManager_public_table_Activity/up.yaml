@@ -1,0 +1,24 @@
+- args:
+    permission:
+      allow_upsert: true
+      check: {}
+      columns:
+      - id
+      - note
+      - leadId
+      - type
+      - createdAt
+      - data
+      - ownerId
+      - notify
+      - date
+      - time
+      localPresets:
+      - key: ""
+        value: ""
+      set: {}
+    role: regionalManager
+    table:
+      name: Activity
+      schema: public
+  type: create_insert_permission

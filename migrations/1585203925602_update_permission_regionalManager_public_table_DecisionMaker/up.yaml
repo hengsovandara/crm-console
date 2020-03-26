@@ -1,0 +1,26 @@
+- args:
+    permission:
+      allow_upsert: true
+      check: {}
+      columns:
+      - id
+      - title
+      - firstName
+      - lastName
+      - position
+      - phone
+      - email
+      - leadId
+      - createdAt
+      - countryCode
+      - companyId
+      - isAuthorized
+      localPresets:
+      - key: ""
+        value: ""
+      set: {}
+    role: regionalManager
+    table:
+      name: DecisionMaker
+      schema: public
+  type: create_insert_permission

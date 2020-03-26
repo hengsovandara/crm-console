@@ -1,0 +1,23 @@
+- args:
+    permission:
+      columns:
+      - notify
+      - date
+      - data
+      - note
+      - type
+      - time
+      - createdAt
+      - id
+      - leadId
+      - ownerId
+      filter: {}
+      localPresets:
+      - key: ""
+        value: ""
+      set: {}
+    role: regionalManager
+    table:
+      name: Activity
+      schema: public
+  type: create_update_permission

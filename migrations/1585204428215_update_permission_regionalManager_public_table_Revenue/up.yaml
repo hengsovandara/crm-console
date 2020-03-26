@@ -1,0 +1,17 @@
+- args:
+    permission:
+      columns:
+      - amount
+      - duration
+      - id
+      - leadId
+      filter: {}
+      localPresets:
+      - key: ""
+        value: ""
+      set: {}
+    role: regionalManager
+    table:
+      name: Revenue
+      schema: public
+  type: create_update_permission

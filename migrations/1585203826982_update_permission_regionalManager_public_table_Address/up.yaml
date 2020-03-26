@@ -1,0 +1,27 @@
+- args:
+    permission:
+      columns:
+      - number
+      - lat
+      - lng
+      - long
+      - buildingName
+      - city
+      - complete
+      - floor
+      - khan
+      - postCode
+      - sangkat
+      - street
+      - id
+      - leadId
+      filter: {}
+      localPresets:
+      - key: ""
+        value: ""
+      set: {}
+    role: regionalManager
+    table:
+      name: Address
+      schema: public
+  type: create_update_permission

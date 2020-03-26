@@ -1,0 +1,17 @@
+- args:
+    permission:
+      allow_aggregations: true
+      columns:
+      - id
+      - name
+      - type
+      - description
+      - img
+      - metadata
+      filter: {}
+      limit: null
+    role: regionalManager
+    table:
+      name: Enum
+      schema: public
+  type: create_select_permission

@@ -1,0 +1,14 @@
+- args:
+    permission:
+      allow_aggregations: true
+      columns:
+      - name
+      - id
+      - leadId
+      filter: {}
+      limit: null
+    role: regionalManager
+    table:
+      name: Group
+      schema: public
+  type: create_select_permission

@@ -1,0 +1,25 @@
+- args:
+    permission:
+      allow_aggregations: true
+      columns:
+      - number
+      - lat
+      - lng
+      - long
+      - buildingName
+      - city
+      - complete
+      - floor
+      - khan
+      - postCode
+      - sangkat
+      - street
+      - id
+      - leadId
+      filter: {}
+      limit: null
+    role: regionalManager
+    table:
+      name: Address
+      schema: public
+  type: create_select_permission

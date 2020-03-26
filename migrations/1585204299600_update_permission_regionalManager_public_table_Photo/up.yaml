@@ -1,0 +1,19 @@
+- args:
+    permission:
+      columns:
+      - description
+      - name
+      - type
+      - url
+      - id
+      - leadId
+      filter: {}
+      localPresets:
+      - key: ""
+        value: ""
+      set: {}
+    role: regionalManager
+    table:
+      name: Photo
+      schema: public
+  type: create_update_permission

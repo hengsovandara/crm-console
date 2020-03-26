@@ -1,0 +1,23 @@
+- args:
+    role: moderator
+    table:
+      name: Credential
+      schema: public
+  type: drop_update_permission
+- args:
+    permission:
+      columns:
+      - phoneNumber
+      - pin
+      - id
+      - userId
+      filter: {}
+      localPresets:
+      - key: ""
+        value: ""
+      set: {}
+    role: moderator
+    table:
+      name: Credential
+      schema: public
+  type: create_update_permission

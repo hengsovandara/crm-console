@@ -1,0 +1,43 @@
+- args:
+    permission:
+      allow_upsert: true
+      check: {}
+      columns:
+      - id
+      - name
+      - phone
+      - email
+      - isAffliated
+      - employeesNumber
+      - outlets
+      - createdAt
+      - updatedAt
+      - sector
+      - type
+      - logo
+      - ownerId
+      - status
+      - size
+      - teamId
+      - stats
+      - groupId
+      - referenceId
+      - countryCode
+      - parentId
+      - isBrand
+      - description
+      - openHours
+      - cover
+      - fullAddress
+      - isPitched
+      - isBetaSigned
+      - ekycId
+      localPresets:
+      - key: ""
+        value: ""
+      set: {}
+    role: regionalManager
+    table:
+      name: Lead
+      schema: public
+  type: create_insert_permission

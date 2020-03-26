@@ -1,0 +1,28 @@
+- args:
+    permission:
+      allow_upsert: true
+      check: {}
+      columns:
+      - id
+      - buildingName
+      - floor
+      - number
+      - street
+      - city
+      - khan
+      - sangkat
+      - lat
+      - long
+      - leadId
+      - lng
+      - postCode
+      - complete
+      localPresets:
+      - key: ""
+        value: ""
+      set: {}
+    role: regionalManager
+    table:
+      name: Address
+      schema: public
+  type: create_insert_permission

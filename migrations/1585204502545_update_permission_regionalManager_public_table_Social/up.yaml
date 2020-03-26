@@ -1,0 +1,15 @@
+- args:
+    permission:
+      allow_aggregations: true
+      columns:
+      - link
+      - type
+      - id
+      - leadId
+      filter: {}
+      limit: null
+    role: regionalManager
+    table:
+      name: Social
+      schema: public
+  type: create_select_permission

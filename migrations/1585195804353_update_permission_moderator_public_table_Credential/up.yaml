@@ -1,0 +1,17 @@
+- args:
+    role: moderator
+    table:
+      name: Credential
+      schema: public
+  type: drop_select_permission
+- args:
+    permission:
+      allow_aggregations: false
+      columns: []
+      computed_fields: []
+      filter: {}
+    role: moderator
+    table:
+      name: Credential
+      schema: public
+  type: create_select_permission

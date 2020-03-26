@@ -1,0 +1,19 @@
+- args:
+    permission:
+      allow_upsert: true
+      check: {}
+      columns:
+      - id
+      - leadId
+      - type
+      - like
+      - comment
+      localPresets:
+      - key: ""
+        value: ""
+      set: {}
+    role: regionalManager
+    table:
+      name: LoyaltyProgram
+      schema: public
+  type: create_insert_permission

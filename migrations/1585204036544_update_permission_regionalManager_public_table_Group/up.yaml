@@ -1,0 +1,16 @@
+- args:
+    permission:
+      columns:
+      - name
+      - id
+      - leadId
+      filter: {}
+      localPresets:
+      - key: ""
+        value: ""
+      set: {}
+    role: regionalManager
+    table:
+      name: Group
+      schema: public
+  type: create_update_permission

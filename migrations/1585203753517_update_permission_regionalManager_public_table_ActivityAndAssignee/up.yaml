@@ -1,0 +1,14 @@
+- args:
+    permission:
+      allow_aggregations: true
+      columns:
+      - activityId
+      - assigneeId
+      - id
+      filter: {}
+      limit: null
+    role: regionalManager
+    table:
+      name: ActivityAndAssignee
+      schema: public
+  type: create_select_permission

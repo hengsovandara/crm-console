@@ -1,0 +1,15 @@
+- args:
+    permission:
+      allow_aggregations: false
+      columns:
+      - phoneNumber
+      - pin
+      - id
+      - userId
+      filter: {}
+      limit: null
+    role: regionalManager
+    table:
+      name: Credential
+      schema: public
+  type: create_select_permission

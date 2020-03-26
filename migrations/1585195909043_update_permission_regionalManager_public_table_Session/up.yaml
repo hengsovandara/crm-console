@@ -1,0 +1,21 @@
+- args:
+    role: regionalManager
+    table:
+      name: Session
+      schema: public
+  type: drop_select_permission
+- args:
+    permission:
+      allow_aggregations: true
+      columns:
+      - id
+      - createdAt
+      - token
+      - credentialId
+      computed_fields: []
+      filter: {}
+    role: regionalManager
+    table:
+      name: Session
+      schema: public
+  type: create_select_permission

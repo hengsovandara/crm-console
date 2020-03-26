@@ -1,0 +1,25 @@
+- args:
+    role: regionalManager
+    table:
+      name: Users
+      schema: public
+  type: drop_update_permission
+- args:
+    permission:
+      columns:
+      - countryCode
+      - email
+      - name
+      - photo
+      - role
+      - id
+      filter: {}
+      localPresets:
+      - key: ""
+        value: ""
+      set: {}
+    role: regionalManager
+    table:
+      name: Users
+      schema: public
+  type: create_update_permission

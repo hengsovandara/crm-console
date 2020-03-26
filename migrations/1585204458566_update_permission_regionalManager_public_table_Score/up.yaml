@@ -1,0 +1,18 @@
+- args:
+    permission:
+      allow_aggregations: true
+      columns:
+      - all
+      - contact
+      - info
+      - payment
+      - type
+      - id
+      - leadId
+      filter: {}
+      limit: null
+    role: regionalManager
+    table:
+      name: Score
+      schema: public
+  type: create_select_permission

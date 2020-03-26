@@ -1,0 +1,20 @@
+- args:
+    permission:
+      columns:
+      - all
+      - contact
+      - info
+      - payment
+      - type
+      - id
+      - leadId
+      filter: {}
+      localPresets:
+      - key: ""
+        value: ""
+      set: {}
+    role: regionalManager
+    table:
+      name: Score
+      schema: public
+  type: create_update_permission

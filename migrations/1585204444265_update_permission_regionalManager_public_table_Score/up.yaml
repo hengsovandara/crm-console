@@ -1,0 +1,21 @@
+- args:
+    permission:
+      allow_upsert: true
+      check: {}
+      columns:
+      - id
+      - all
+      - info
+      - payment
+      - contact
+      - type
+      - leadId
+      localPresets:
+      - key: ""
+        value: ""
+      set: {}
+    role: regionalManager
+    table:
+      name: Score
+      schema: public
+  type: create_insert_permission

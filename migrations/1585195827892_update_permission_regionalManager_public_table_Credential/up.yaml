@@ -1,0 +1,17 @@
+- args:
+    permission:
+      columns:
+      - phoneNumber
+      - pin
+      - id
+      - userId
+      filter: {}
+      localPresets:
+      - key: ""
+        value: ""
+      set: {}
+    role: regionalManager
+    table:
+      name: Credential
+      schema: public
+  type: create_update_permission

@@ -1,0 +1,21 @@
+- args:
+    role: regionalManager
+    table:
+      name: Credential
+      schema: public
+  type: drop_select_permission
+- args:
+    permission:
+      allow_aggregations: false
+      columns:
+      - phoneNumber
+      - pin
+      - id
+      - userId
+      computed_fields: []
+      filter: {}
+    role: regionalManager
+    table:
+      name: Credential
+      schema: public
+  type: create_select_permission

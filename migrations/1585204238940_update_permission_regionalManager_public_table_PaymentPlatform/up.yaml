@@ -1,0 +1,18 @@
+- args:
+    permission:
+      columns:
+      - like
+      - comment
+      - type
+      - id
+      - leadId
+      filter: {}
+      localPresets:
+      - key: ""
+        value: ""
+      set: {}
+    role: regionalManager
+    table:
+      name: PaymentPlatform
+      schema: public
+  type: create_update_permission

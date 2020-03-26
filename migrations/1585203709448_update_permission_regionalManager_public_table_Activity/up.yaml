@@ -1,0 +1,21 @@
+- args:
+    permission:
+      allow_aggregations: true
+      columns:
+      - notify
+      - date
+      - data
+      - note
+      - type
+      - time
+      - createdAt
+      - id
+      - leadId
+      - ownerId
+      filter: {}
+      limit: null
+    role: regionalManager
+    table:
+      name: Activity
+      schema: public
+  type: create_select_permission
