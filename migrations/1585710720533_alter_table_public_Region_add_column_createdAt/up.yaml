@@ -1,0 +1,4 @@
+- args:
+    sql: ALTER TABLE "public"."Region" ADD COLUMN "createdAt" timestamptz NULL DEFAULT
+      now();
+  type: run_sql
