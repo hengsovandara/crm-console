@@ -1,0 +1,23 @@
+- args:
+    role: manager
+    table:
+      name: Region
+      schema: public
+  type: drop_insert_permission
+- args:
+    permission:
+      check: {}
+      columns:
+      - name
+      - createdAt
+      - id
+      - managerId
+      localPresets:
+      - key: ""
+        value: ""
+      set: {}
+    role: manager
+    table:
+      name: Region
+      schema: public
+  type: create_insert_permission

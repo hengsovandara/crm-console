@@ -1,0 +1,20 @@
+- args:
+    role: manager
+    table:
+      name: Region
+      schema: public
+  type: drop_select_permission
+- args:
+    permission:
+      allow_aggregations: false
+      columns:
+      - name
+      - createdAt
+      - id
+      - managerId
+      filter: {}
+    role: manager
+    table:
+      name: Region
+      schema: public
+  type: create_select_permission

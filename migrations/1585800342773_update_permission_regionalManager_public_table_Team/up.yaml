@@ -1,0 +1,20 @@
+- args:
+    permission:
+      allow_upsert: true
+      check: {}
+      columns:
+      - id
+      - name
+      - managerId
+      - associateIds
+      - createdAt
+      - regionId
+      localPresets:
+      - key: ""
+        value: ""
+      set: {}
+    role: regionalManager
+    table:
+      name: Team
+      schema: public
+  type: create_insert_permission
